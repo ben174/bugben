@@ -39,15 +39,48 @@ class Project(models.Model):
 
 
 class Resume(models.Model): 
-    entry = models.CharField(
-        max_length=200,
-        help_text = 'A bullet point in my profile.',
+    """Main details of my Resume.
+
+    """
+
+    name = models.CharField(
+        max_length=100,
+        help_text = 'My full name.',
+        blank=False,
+    )
+
+    phone = models.CharField(
+        max_length=100,
+        help_text = 'My phone number.',
+        blank=False,
+    )
+
+    url = models.CharField(
+        max_length=100,
+        help_text = 'My website address.',
         blank=False,
     )
 
 
-class WorkHistoryEntry(models.Model): 
+class ImportantLink(models.Model): 
+    """Main details of my Resume.
 
+    """
+
+    description = models.CharField(
+        max_length=200,
+        help_text = 'Description of the URL.',
+        blank=False,
+    )
+
+    url = models.URLField(
+        help_text = 'Address of this important URL.',
+        blank=True,
+        null=True,
+    )
+
+
+class WorkHistoryEntry(models.Model): 
     client_name = models.CharField(
         max_length=200,
         help_text = 'The employer for whom I worked.',

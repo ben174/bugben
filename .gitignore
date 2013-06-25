@@ -1,4 +1,8 @@
 env
 *.pyc
-*.swp
 *.un~
+*.db
+*.swn
+*.swo
+*.swp
+.DS_Store
