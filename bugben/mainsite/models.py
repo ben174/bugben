@@ -47,6 +47,13 @@ class Project(models.Model):
         null=True,
     )
 
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
+    )
+
 
 class Resume(models.Model): 
     """Main details of my Resume.
@@ -65,15 +72,28 @@ class Resume(models.Model):
         blank=False,
     )
 
+    email = models.CharField(
+        max_length=100,
+        help_text = 'My email address.',
+        blank=False,
+    )
+
     url = models.CharField(
         max_length=100,
         help_text = 'My website address.',
         blank=False,
     )
 
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
+    )
+
 
 class ImportantLink(models.Model): 
-    """Main details of my Resume.
+    """Links which are important to my profile.
 
     """
 
@@ -89,12 +109,26 @@ class ImportantLink(models.Model):
         null=True,
     )
 
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
+    )
+
 
 class ProfileEntry(models.Model): 
     entry = models.CharField(
         max_length=500,
         help_text = 'Entry in my profile.',
         blank=False,
+    )
+
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
     )
 
 
@@ -104,9 +138,17 @@ class ExpertiseEntry(models.Model):
         help_text = 'A section of expertise.',
         blank=False,
     )
+
     entry_details = models.TextField(
         help_text = 'Details on this expertise.',
         blank=False,
+    )
+
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
     )
 
 
@@ -140,6 +182,13 @@ class WorkHistoryEntry(models.Model):
         blank=False,
     )
 
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
+    )
+
 
 class WorkAchievement(models.Model): 
     entry = models.ForeignKey(
@@ -150,4 +199,11 @@ class WorkAchievement(models.Model):
     description = models.TextField(
         help_text = 'A description of the achievement accomplished.',
         blank=False,
+    )
+
+    sort_order = models.FloatField(
+        default=10,
+        help_text = 'Order in which this entry is displayed.', 
+        blank=False, 
+        null=False,
     )

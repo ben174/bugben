@@ -31,10 +31,39 @@ li.profile-entry {
 }
 
 h3 { 
-  border-bottom: dotted 2px #888888;
+  border-bottom: dotted 2px #AAA;
   padding-bottom: 10px; 
+  margin-top: 30px; 
 }
 
 h4 { 
   margin-top: 25px; 
+  font-size: 140%;
+}
+
+h5 { 
+  font-size: 120%;
+  margin-top: 20px;
+}
+
+h6 { 
+  font-size: 110%;
+}
+
+.experience-entries { 
+  margin-left: 20px; 
+}
+
+
+hr.style-two {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
 }
