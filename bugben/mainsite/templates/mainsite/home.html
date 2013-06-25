@@ -10,22 +10,49 @@
       <h5 class="text-center">{{ resume.url }}</h5>
     </div>
     <div class="well">
-      This resume is an application which I wrote.  
+      This resume isn't static. It is an application which I wrote.  
       <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> 
       Feel free to use it and expand on it.
     </div>
 
-    <h4>Profile Summary:</h4>
+    <h3>Profile Summary:</h3>
     <ul>
     {% for entry in profile_entries %}
-      <li>{{ entry.entry }}</li>
+      <li class="profile-entry">{{ entry.entry }}</li>
     {% endfor %}
     </ul>
 
-    <h4>Expertise:</h4>
+    <h3>Expertise:</h3>
     {% for entry in expertise_entries %}
       <h5>{{ entry.entry }}</h5>
       <p>{{ entry.entry_details }}</p>
+    {% endfor %}
+
+    <h3>Experience:</h3>
+
+    <h4>Professional</h4>
+    {% for entry in work_history_entries %}
+      <h5>{{ entry.client_name }}</h5>
+      <p>
+        {{ entry.location }}<br>
+        {{ entry.timespan }}<br>
+        {{ entry.title }}<br>
+      </p>
+      <ul>
+      {% for achievement in entry.workachievement_set.all %}
+        <li>{{ achievement.description }}</li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+
+    <h4>Community</h4>
+    {% for project in projects %}
+      <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
+      <h6>{{ project.short_description }}</h6>
+      {% autoescape off %}
+      <p>{{ project.long_description }}</p>
+      <p>[ <a href="{{ project.src_url }}">View Source</a> ]</h5>
+      {% endautoescape %}
     {% endfor %}
   </div>
   

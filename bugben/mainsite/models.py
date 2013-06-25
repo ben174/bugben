@@ -123,29 +123,31 @@ class WorkHistoryEntry(models.Model):
         blank=False,
     )
 
+    location = models.CharField(
+        max_length=200,
+        help_text = 'Location in which the company is located.',
+        blank=False,
+    )
+
     contract = models.BooleanField(
         help_text = 'A flag indicating whether I was a contractor.',
         default=False, 
     )
 
-    start_date = models.DateField(
-        blank=True,
-        null=True, 
-    )
-
-    end_date = models.DateField(
-        blank=True,
-        null=True, 
+    timespan = models.CharField(
+        max_length=200,
+        help_text = 'Timespan in which I worked at the company.',
+        blank=False,
     )
 
 
 class WorkAchievement(models.Model): 
-    work_history_entry = models.ForeignKey(
+    entry = models.ForeignKey(
         'WorkHistoryEntry',
         help_text = 'Work history entry to which this achievement belongs.',
     )
 
-    achievement = models.TextField(
+    description = models.TextField(
         help_text = 'A description of the achievement accomplished.',
         blank=False,
     )

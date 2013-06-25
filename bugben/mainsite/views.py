@@ -9,11 +9,14 @@ def home(request):
     profile_entries = ProfileEntry.objects.all()
     important_links = ImportantLink.objects.all()
     expertise_entries = ExpertiseEntry.objects.all()
+    work_history_entries = WorkHistoryEntry.objects.all()
+
     return render(request, 'mainsite/home.html', { 
         'resume': resume,
         'projects': projects, 
         'profile_entries': profile_entries,
         'important_links': important_links,
         'expertise_entries': expertise_entries,
+        'work_history_entries': work_history_entries,
     })
 
