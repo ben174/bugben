@@ -3,5 +3,14 @@
 {% block header %}
 {% endblock %}
 {% block content %}
-This is the main page.
+  <h1>Resume of {{ resume.name }}</h1>
+  <h3>Phone: {{ resume.phone }}</h3>
+  <h3>{{ resume.url }}</h3>
+
+  <ul>
+  {% for entry in profile_entries %}
+    <li>{{ entry.entry }}</li>
+  {% endfor %}
+  </ul>
+  
 {% endblock %}

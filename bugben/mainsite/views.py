@@ -4,5 +4,14 @@ from django.core.urlresolvers import reverse
 from mainsite.models import *
 
 def home(request):
-    return render(request, 'mainsite/home.html', { })
+    resume = Resume.objects.all()[0]
+    projects = Project.objects.all()
+    profile_entries = ProfileEntry.objects.all()
+    important_links = ImportantLink.objects.all()
+    return render(request, 'mainsite/home.html', { 
+        'resume': resume,
+        'projects': projects, 
+        'profile_entries': profile_entries,
+        'important_links': important_links,
+    })
 
