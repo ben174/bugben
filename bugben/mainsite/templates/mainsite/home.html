@@ -3,21 +3,30 @@
 {% block header %}
 {% endblock %}
 {% block content %}
-  <p class="text-center">
-    <h1 class="text-center">Resume of {{ resume.name }}</h1>
-    <h5 class="text-center">Phone: {{ resume.phone }}</h5>
-    <h5 class="text-center">{{ resume.url }}</h5>
-  </p>
-  <div class="well">
-    This resume is an application which I wrote.  
-    <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> Feel free to use it
-    and expand on it.
-  </div>
+  <div class="resume">
+    <div class="main-section">
+      <h1 class="text-center">{{ resume.name }}</h1>
+      <h5 class="text-center">Phone: {{ resume.phone }}</h5>
+      <h5 class="text-center">{{ resume.url }}</h5>
+    </div>
+    <div class="well">
+      This resume is an application which I wrote.  
+      <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> 
+      Feel free to use it and expand on it.
+    </div>
 
-  <ul>
-  {% for entry in profile_entries %}
-    <li>{{ entry.entry }}</li>
-  {% endfor %}
-  </ul>
+    <h4>Profile Summary:</h4>
+    <ul>
+    {% for entry in profile_entries %}
+      <li>{{ entry.entry }}</li>
+    {% endfor %}
+    </ul>
+
+    <h4>Expertise:</h4>
+    {% for entry in expertise_entries %}
+      <h5>{{ entry.entry }}</h5>
+      <p>{{ entry.entry_details }}</p>
+    {% endfor %}
+  </div>
   
 {% endblock %}

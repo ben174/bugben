@@ -90,6 +90,34 @@ def create_profile():
     ProfileEntry.objects.create(entry='Contributor and supporter of various open source software projects.')
 
 
+    entry = ExpertiseEntry(entry='Web Application Development')
+    entry.entry_details = 'Python, Django, South, Front End Development (HTML5, jQuery, AJAX, Bootstrap), Internal Tools'
+
+    entry = ExpertiseEntry(entry='Operating Systems')
+    entry.entry_details = 'Linux (Red Hat Enterprise Linux (RHEL), Ubuntu, Debian, Fedora, CentOS), Sun Solaris, other Unix variants, OSX, Microsoft Windows'
+    entry.save()
+
+    entry = ExpertiseEntry(entry='Microsoft .NET')
+    entry.entry_details = 'C#, Visual Basic .NET, Windows Forms, ASP.NET, WPF, WCF'
+    entry.save()
+
+    entry = ExpertiseEntry(entry='Other Languages')
+    entry.entry_details = 'Python, ColdFusion, PHP, Perl'
+    entry.save()
+
+    entry = ExpertiseEntry(entry='Databases')
+    entry.entry_details = 'MySQL, Microsoft SQL Server 2000-2008, Oracle: 8i - 9i - 10g, PostgreSQL'
+    entry.save()
+
+    entry = ExpertiseEntry(entry='Development Environments')
+    entry.entry_details = 'VIM, Visual Studio .NET, Eclipse, NetBeans, Notepad'
+    entry.save()
+
+    entry = ExpertiseEntry(entry='Other Skills')
+    entry.entry_details = 'XML, JSON, XSL, AJAX, JavaScript, HTML, HTML 5, XHTML, CSS, JQuery, Scriptaculous, ASP, VBScript, Bash (shell scripting), VIM, SQL, PL/SQL, T-SQL, ORM (Hibernate/NHibernate), GIT, Heroku, Amazon EC2, Apache, GIS, Reporting, Video/Audio Processing and Production'
+    entry.save()
+
+
 
 if __name__ == '__main__': 
     main()

@@ -98,6 +98,18 @@ class ProfileEntry(models.Model):
     )
 
 
+class ExpertiseEntry(models.Model): 
+    entry = models.CharField(
+        max_length=500,
+        help_text = 'A section of expertise.',
+        blank=False,
+    )
+    entry_details = models.TextField(
+        help_text = 'Details on this expertise.',
+        blank=False,
+    )
+
+
 class WorkHistoryEntry(models.Model): 
     client_name = models.CharField(
         max_length=200,
