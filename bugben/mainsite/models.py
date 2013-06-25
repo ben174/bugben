@@ -1,5 +1,15 @@
 from django.db import models
+from django.db.models import signals
+from django.contrib.auth.management import create_superuser
+from django.contrib.auth import models as auth_app
 
+
+# Prevent interactive question about wanting a superuser created.
+signals.post_syncdb.disconnect(
+    create_superuser,
+    sender=auth_app,
+    dispatch_uid = "django.contrib.auth.management.create_superuser"
+)
 
 class Project(models.Model): 
     """A class to hold a project. A project may be an application I've written, 
@@ -77,6 +87,14 @@ class ImportantLink(models.Model):
         help_text = 'Address of this important URL.',
         blank=True,
         null=True,
+    )
+
+
+class ProfileEntry(models.Model): 
+    entry = models.CharField(
+        max_length=500,
+        help_text = 'Entry in my profile.',
+        blank=False,
     )
 
 

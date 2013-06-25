@@ -76,7 +76,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    DIR + "/media",
+    DIR + "/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -117,7 +117,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     join(DIR, 'templates'),
-    join(DIR, 'bugben/templates/mainsite'),
+    join(DIR, 'mainsite/templates'),
 )
 
 INSTALLED_APPS = (
@@ -129,6 +129,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django_extensions',
+    'mainsite',
 )
 
 # A sample logging configuration. The only tangible logging
