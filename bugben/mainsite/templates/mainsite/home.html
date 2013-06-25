@@ -3,9 +3,16 @@
 {% block header %}
 {% endblock %}
 {% block content %}
-  <h1>Resume of {{ resume.name }}</h1>
-  <h3>Phone: {{ resume.phone }}</h3>
-  <h3>{{ resume.url }}</h3>
+  <p class="text-center">
+    <h1 class="text-center">Resume of {{ resume.name }}</h1>
+    <h5 class="text-center">Phone: {{ resume.phone }}</h5>
+    <h5 class="text-center">{{ resume.url }}</h5>
+  </p>
+  <div class="well">
+    This resume is an application which I wrote.  
+    <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> Feel free to use it
+    and expand on it.
+  </div>
 
   <ul>
   {% for entry in profile_entries %}
