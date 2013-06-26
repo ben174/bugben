@@ -1,0 +1,12 @@
+<ul>
+{% for link in important_links %}
+  <li class="profile-entry">
+    <b>{{ link.description }}:</b> 
+    {% if not format %}
+      <a href="{{ link.url }}">{{ link.url }}</a>
+    {% else %}
+      {{ link.url }}
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

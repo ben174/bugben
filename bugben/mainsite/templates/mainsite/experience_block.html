@@ -1,0 +1,18 @@
+<div class="experience-entries">
+{% for entry in work_history_entries %}
+  {% if not format %}
+    <img class="pull-right work-logo" src="/static/img/logos/{{ entry.client_name|slugify}}.png">
+  {% endif %}
+  <h5>{{ entry.client_name }} ({{ entry.client_name|slugify}})</h5>
+  <p>
+    {{ entry.location }}<br>
+    {{ entry.timespan }}<br>
+    {{ entry.title }}<br>
+  </p>
+  <ul>
+  {% for achievement in entry.workachievement_set.all %}
+    <li>{{ achievement.description }}</li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+</div>

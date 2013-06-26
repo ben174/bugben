@@ -10,7 +10,7 @@
 }
 
 .resume { 
-  margin: 5%;
+  margin: 2%;
   border: 10px solid #666;
   padding: 5%;
   background-color: white;
@@ -42,7 +42,7 @@ h4 {
 }
 
 h5 { 
-  font-size: 120%;
+  font-size: 130%;
   margin-top: 20px;
 }
 
@@ -66,4 +66,12 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
+}
+
+.work-logo { 
+  width: 100px;
+  height: 100px; 
+  margin-top: 10px; 
+  margin-bottom: 5px;
+  margin-left: 5px;
 }

@@ -7,78 +7,48 @@
     <div class="main-section">
       <h1 class="text-center">{{ resume.name }}</h1>
       <h5 class="text-center">{{ resume.email }}</h5>
-      <!--
-      <h5 class="text-center">Phone: {{ resume.phone }}</h5>
-      -->
       <h5 class="text-center">{{ resume.url }}</h5>
     </div>
-    <div class="well">
-      This resume isn't static. It is an application which I wrote.  
-      <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> 
-      Feel free to use it and expand on it.
-    </div>
+    {% if not format %}
+      <div class="well">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p>This resume isn't static. It is an application which I wrote.  
+        <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a> 
+        Feel free to use it and expand on it.</p>
+        <p>This is the fully-styled version of my home page. If you'd like you can 
+        view it in other formats: </p>
+
+        <center>
+        <div class="btn-group" align="center">
+          <a href="format/basic" class="btn">Traditional Resume</a>
+          <a href="format/plain" class="btn">Plain Text</a>
+        </div>
+      </center>
+      </div>
+    {% endif %}
 
     <h3>Profile Summary:</h3>
-    <ul>
-    {% for entry in profile_entries %}
-      <li class="profile-entry">{{ entry.entry }}</li>
-    {% endfor %}
-    </ul>
+    {% include 'mainsite/summary_block.html' %}
 
     <h3>Links:</h3>
-    <ul>
-    {% for link in important_links %}
-      <li class="profile-entry"><b>{{ link.description }}:</b> <a href="{{ link.url }}">{{ link.url }}</a></li>
-    {% endfor %}
-    </ul>
+    {% include 'mainsite/links_block.html' %}
 
     <h3>Expertise:</h3>
-    {% for entry in expertise_entries %}
-      <h5>{{ entry.entry }}</h5>
-      <p>{{ entry.entry_details }}</p>
-    {% endfor %}
+    {% include 'mainsite/expertise_block.html' %}
 
-    <h3>Community Contributions:</h3>
-    <div class="experience-entries">
-    {% for project in projects %}
-      <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
-      <h6>{{ project.short_description }}</h6>
-      {% autoescape off %}
-      <p>{{ project.long_description }}</p>
-      {% endautoescape %}
-      <p>
-        {% if project.deployment_url %}
-        <dl class="dl-horizontal">
-          <dt>Project Page</dt>
-          <dd><a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a></dd>
-        </dl>
-        {% endif %}
-        {% if project.src_url %}
-        <dl class="dl-horizontal">
-          <dt>Source Code</dt>
-          <dd><a href="{{ project.src_url }}">{{ project.src_url }}</a></dd>
-        </dl>
-        {% endif %}
-      </p>
-    {% endfor %}
-    </div>
+    {% if not format %}
+      <h3>Community Contributions:</h3>
+      {% include 'mainsite/community_block.html' %}
 
-    <h3>Experience:</h3>
-    <div class="experience-entries">
-    {% for entry in work_history_entries %}
-      <h5>{{ entry.client_name }}</h5>
-      <p>
-        {{ entry.location }}<br>
-        {{ entry.timespan }}<br>
-        {{ entry.title }}<br>
-      </p>
-      <ul>
-      {% for achievement in entry.workachievement_set.all %}
-        <li>{{ achievement.description }}</li>
-      {% endfor %}
-      </ul>
-    {% endfor %}
-    </div>
+      <h3>Experience:</h3>
+      {% include 'mainsite/experience_block.html' %}
+    {% else %}
+      <h3>Experience:</h3>
+      {% include 'mainsite/experience_block.html' %}
+
+      <h3>Community Contributions:</h3>
+      {% include 'mainsite/community_block.html' %}
+    {% endif %}
 
   </div>
   

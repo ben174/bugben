@@ -1,0 +1,41 @@
+<div class="experience-entries">
+{% for project in projects %}
+  <h5>
+    {% if not format %}
+      <a href="{{ project.deployment_url }}">{{ project.name }}</a>
+    {% else %}
+      {{ project.name }}
+    {% endif %}
+  </h5>
+  <h6>{{ project.short_description }}</h6>
+  {% autoescape off %}
+  <p>{{ project.long_description }}</p>
+  {% endautoescape %}
+  <p>
+    {% if project.deployment_url %}
+    <dl class="dl-horizontal">
+      <dt>Project Page</dt>
+      <dd>
+        {% if not format %}
+          <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
+        {% else %}
+          {{ project.deployment_url }}
+        {% endif %}
+      </dd>
+    </dl>
+    {% endif %}
+    {% if project.src_url %}
+    <dl class="dl-horizontal">
+      <dt>Source Code</dt>
+      <dd>
+        {% if not format %}
+          <a href="{{ project.src_url }}">{{ project.src_url }}</a>
+        {% else %}
+          {{ project.src_url }}
+        {% endif %}
+      </dd>
+    </dl>
+    {% endif %}
+  </p>
+{% endfor %}
+</div>

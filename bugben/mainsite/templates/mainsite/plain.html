@@ -1,0 +1,45 @@
+{% block content %}{{ resume.name }}
+{{ resume.email }}
+{{ resume.url }}
+
+PROFILE SUMMARY
+=====================================
+{% for entry in profile_entries %} - {{ entry.entry }}
+{% endfor %}
+
+LINKS
+=====================================
+{% for link in important_links %} - {{ link.description }}: {{ link.url }}
+{% endfor %}
+
+EXPERTISE
+=====================================
+{% for entry in expertise_entries %} {{ entry.entry }}
+ {{ entry.entry_details }}
+
+{% endfor %}
+
+EXPERIENCE
+=====================================
+{% for entry in work_history_entries %}{{ entry.client_name }}
+{{ entry.location }}
+{{ entry.timespan }}
+{{ entry.title }}
+{% for achievement in entry.workachievement_set.all %}
+ * {{ achievement.description }}
+{% endfor %}
+
+{% endfor %}
+
+COMMUNITY CONTRIBUTIONS
+=====================================
+{% for project in projects %}
+ {{ project.name }}
+ {{ project.short_description }}
+ {{ project.long_description|striptags }}
+
+ {% if project.deployment_url %} Project Page: {{ project.deployment_url }} {% endif %}
+ {% if project.src_url %} Source Code: {{ project.src_url }} {% endif %}
+{% endfor %}
+
+{% endblock %}

@@ -6,3 +6,7 @@ env
 *.swo
 *.swp
 .DS_Store
+
+*.swl
+
+*.swm
