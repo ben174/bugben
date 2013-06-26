@@ -11,14 +11,21 @@ def home(request, output_format=None):
     data = resume_dict()
     data['format'] = output_format
     if output_format == 'plain': 
-        return HttpResponse(generate_text_resume(), content_type='text/plain')
+        text_width = 80
+        if request.GET.get('c', ''): 
+            try: 
+                text_width = int(request.GET.get('c', ''))
+            except: 
+                pass
+        return HttpResponse(generate_text_resume(text_width), 
+                content_type='text/plain')
     else: 
         return render(request, 'mainsite/home.html', data)
 
 
-def generate_text_resume(): 
+def generate_text_resume(text_width): 
     data = resume_dict()
-    text_width = 80
+
     header = ' Resume Of '.center(text_width, '-')
     ret = header + '\n'
     ret += data['resume'].name.upper().center(text_width) + '\n'
