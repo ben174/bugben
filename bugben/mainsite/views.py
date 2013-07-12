@@ -12,9 +12,9 @@ def home(request, output_format=None):
     data['format'] = output_format
     if output_format == 'plain': 
         text_width = 80
-        if request.GET.get('c', ''): 
+        if request.GET.get('columns', ''): 
             try: 
-                text_width = int(request.GET.get('c', ''))
+                text_width = int(request.GET.get('columns', ''))
             except: 
                 pass
         return HttpResponse(generate_text_resume(text_width), 
@@ -92,19 +92,17 @@ def generate_text_resume(text_width):
             ret += '      Project Page: %s\n' % project.deployment_url
             ret += '      Source Code:  %s\n' % project.src_url
         ret += '\n\n'
-    
 
-    tag_line_top = "The code to generate this resume was written by me."
-    tag_line_bottom = "See the code at http://github.com/ben174/bugben"
+    tag_line_top = "This is my plain text resume generator"
+    tag_line_middle = "Outputting at %s columns" % text_width
+    tag_line_bottom = "http://github.com/ben174/bugben"
     
     ret += '-' * text_width + '\n'
     ret += tag_line_top.center(text_width) + '\n'
+    ret += tag_line_middle.center(text_width) + '\n'
     ret += tag_line_bottom.center(text_width) + '\n'
     ret += '-' * text_width + '\n'
     return ret
-
-    
-
 
 
 def resume_dict(): 
