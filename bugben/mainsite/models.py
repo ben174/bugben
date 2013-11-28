@@ -54,6 +54,9 @@ class Project(models.Model):
         null=False,
     )
 
+    def __unicode__( self ):
+        return "Project: %s" % self.name
+
 
 class Resume(models.Model): 
     """Main details of my Resume.
@@ -91,6 +94,9 @@ class Resume(models.Model):
         null=False,
     )
 
+    def __unicode__( self ):
+        return "Resume: %s" % self.name
+
 
 class ImportantLink(models.Model): 
     """Links which are important to my profile.
@@ -116,6 +122,9 @@ class ImportantLink(models.Model):
         null=False,
     )
 
+    def __unicode__( self ):
+        return self.url
+
 
 class ProfileEntry(models.Model): 
     entry = models.CharField(
@@ -130,6 +139,9 @@ class ProfileEntry(models.Model):
         blank=False, 
         null=False,
     )
+
+    def __unicode__( self ):
+        return 'Profile: %s' % self.entry
 
 
 class ExpertiseEntry(models.Model): 
@@ -150,6 +162,9 @@ class ExpertiseEntry(models.Model):
         blank=False, 
         null=False,
     )
+
+    def __unicode__( self ):
+        return 'Expertise: %s' % self.entry
 
 
 class WorkHistoryEntry(models.Model): 
@@ -189,6 +204,9 @@ class WorkHistoryEntry(models.Model):
         null=False,
     )
 
+    def __unicode__( self ):
+        return 'Work History: %s' % self.client_name
+
 
 class WorkAchievement(models.Model): 
     entry = models.ForeignKey(
@@ -207,3 +225,8 @@ class WorkAchievement(models.Model):
         blank=False, 
         null=False,
     )
+
+    def __unicode__( self ):
+        client = self.entry.client_name
+        short_desc = self.description[0:50]
+        return 'Achievement (%s): %s' % (client, short_desc)

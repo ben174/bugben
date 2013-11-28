@@ -10,10 +10,10 @@ import random
 DIR = dirname(abspath(dirname(__file__)))
 sys.path.append(DIR)
 
-from bugben import settings
-from django.core.management import setup_environ
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mybb.settings'
 
-setup_environ(settings)
+from bugben import settings
+os.environ['DJANGO_SETTINGS_MODULE'] = 'bugben.settings'
 
 from mainsite.models import *
 from django.contrib.auth.models import User
