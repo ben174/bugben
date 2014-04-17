@@ -4,6 +4,5 @@ django-extensions==1.2.5
 docx==0.2.1
 ipython==1.1.0
 lxml==3.2.4
-readline==6.2.4.1
 six==1.4.1
 wsgiref==0.1.2
