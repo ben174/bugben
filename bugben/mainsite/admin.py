@@ -7,5 +7,6 @@ admin.site.register([
     WorkHistoryEntry,
     WorkAchievement,
     ImportantLink,
-    ProfileEntry
+    ProfileEntry,
+    ExpertiseEntry,
 ])
