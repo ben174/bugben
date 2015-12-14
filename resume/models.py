@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.text import slugify
+
 
 class Project(models.Model):
     """A class to hold a project. A project may be an application I've written,
@@ -215,6 +217,10 @@ class WorkHistoryEntry(models.Model):
     resume = models.ForeignKey(
         'Resume',
     )
+
+    @property
+    def logo_path(self):
+        return 'img/logos/{}.png'.format(slugify(self.client_name))
 
     def __unicode__((self)):
         return 'Work History: %s' % self.client_name

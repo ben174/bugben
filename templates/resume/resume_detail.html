@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
 
@@ -87,7 +88,7 @@
 
         {% for job in object.workhistoryentry_set.all %}
             {% if not format %}
-            <img class="pull-right work-logo" src="/static/img/logos/{{ entry.client_name|slugify}}.png">
+                <img class="pull-right work-logo" src="{% static job.logo_path %}">
             {% endif %}
             <h5>{{ job.client_name }}</h5>
 

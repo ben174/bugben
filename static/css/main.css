@@ -1,0 +1,77 @@
+.main-section { 
+  text-align: center;
+  margin: 0px;
+  font-family: tahoma, arial, sans-serif;
+  border-radius: 15px;
+  border: solid 5px #666;
+  padding: 22px;
+  background-color: #F6F6F6;
+  margin-bottom: 40px;
+}
+
+.resume { 
+  margin: 2%;
+  border: 10px solid #666;
+  padding: 5%;
+  background-color: white;
+  -moz-border-radius: 5px;
+  border-radius: 15px;
+  -moz-box-shadow: 3px 3px 10px #000;
+  -webkit-box-shadow: 3px 3px 10px #000;
+  box-shadow: 3px 3px 10px #000;
+}
+
+body { 
+  background-color: rgb(148, 148, 148);
+}
+
+li.profile-entry { 
+  font-size: 120%;
+  line-height: 26px;
+}
+
+h3 { 
+  border-bottom: dotted 2px #AAA;
+  padding-bottom: 10px; 
+  margin-top: 30px; 
+}
+
+h4 { 
+  margin-top: 25px; 
+  font-size: 140%;
+}
+
+h5 { 
+  font-size: 130%;
+  margin-top: 20px;
+}
+
+h6 { 
+  font-size: 110%;
+}
+
+.experience-entries { 
+  margin-left: 20px; 
+}
+
+
+hr.style-two {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+.work-logo { 
+  width: 100px;
+  height: 100px; 
+  margin-top: 10px; 
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
