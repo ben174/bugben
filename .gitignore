@@ -10,3 +10,7 @@ env
 *.swl
 
 *.swm
+
+venv
+db.sqlite3
+old/

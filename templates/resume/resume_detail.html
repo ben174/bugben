@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="resume">
+    <div class="main-section">
+        <h1 class="text-center">Ben Friedland</h1>
+        <h5 class="text-center">resume@bugben.com</h5>
+        <h5 class="text-center">http://www.bugben.com</h5>
+    </div>
+    <div class="well">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <p>This resume isn't static. It is an application which I wrote.
+            <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a>
+            Feel free to use it and expand on it.</p>
+
+        <p>This is the fully-styled version of my home page. If you'd like you can
+            view it in other formats: </p>
+        <div class="btn-group" align="center">
+            <a href="format/basic" class="btn">Traditional Resume</a>
+            <a href="format/plain?columns=80" class="btn">Plain Text</a>
+        </div>
+    </div>
+
+
+    <h3>Profile Summary:</h3>
+    <ul>
+        {% for entry in object.profileentry_set.all %}
+        <li>{{ entry.entry }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Links:</h3>
+    <ul>
+        {% for link in object.importantlink_set.all %}
+        <li class="profile-entry">
+            <b>{{ link.description }}</b>
+            <a href="{{ link.url }}">{{ link.url }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <h3>Expertise:</h3>
+    {% for entry in object.expertiseentry_set.all %}
+    <h5>{{ entry.entry }}</h5>
+
+    <p>{{ entry.entry_details }}</p>
+    {% endfor %}
+
+    <h3>Community Contributions:</h3>
+
+    <div class="experience-entries">
+
+        {% for project in object.project_set.all %}
+
+
+        <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
+        <h6>{{ project.short_description }}</h6>
+
+        {{ project.long_description|safe }}
+
+        <dl class="dl-horizontal">
+            <dt>Project Page</dt>
+            <dd>
+                <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
+            </dd>
+        </dl>
+
+
+        <dl class="dl-horizontal">
+            <dt>Source Code</dt>
+            <dd>
+                <a href="{{ project.src_url }}">{{ project.src_url }}</a>
+            </dd>
+        </dl>
+
+        {% endfor %}
+        <p></p>
+    </div>
+
+
+    <h3>Experience:</h3>
+
+    <div class="experience-entries">
+
+        {% for job in object.workhistoryentry_set.all %}
+            {% if not format %}
+            <img class="pull-right work-logo" src="/static/img/logos/{{ entry.client_name|slugify}}.png">
+            {% endif %}
+            <h5>{{ job.client_name }}</h5>
+
+            <p>
+                {{ job.location }}<br>
+                {{ job.timespan }}<br>
+                {{ job.title }}<br>
+            </p>
+            <ul>
+                {% for achievement in job.workachievement_set.all %}
+                <li>{{ achievement.description }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+
+{% endblock %}
