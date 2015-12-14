@@ -51,9 +51,11 @@ class Project(models.Model):
         'Resume',
     )
 
-
     def __unicode__((self)):
         return "Project: %s" % self.name
+
+    class Meta:
+        ordering = ['sort_order']
 
 
 class Resume(models.Model):
@@ -95,6 +97,9 @@ class Resume(models.Model):
     def __unicode__((self)):
         return "Resume: %s" % self.name
 
+    class Meta:
+        ordering = ['sort_order']
+
 
 class ImportantLink(models.Model):
     """Links which are important to my profile.
@@ -127,6 +132,9 @@ class ImportantLink(models.Model):
     def __unicode__((self)):
         return self.url
 
+    class Meta:
+        ordering = ['sort_order']
+
 
 class ProfileEntry(models.Model):
     entry = models.CharField(
@@ -148,6 +156,9 @@ class ProfileEntry(models.Model):
 
     def __unicode__((self)):
         return 'Profile: %s' % self.entry
+
+    class Meta:
+        ordering = ['sort_order']
 
 
 class ExpertiseEntry(models.Model):
@@ -175,6 +186,9 @@ class ExpertiseEntry(models.Model):
 
     def __unicode__((self)):
         return 'Expertise: %s' % self.entry
+
+    class Meta:
+        ordering = ['sort_order']
 
 
 class WorkHistoryEntry(models.Model):
@@ -225,6 +239,10 @@ class WorkHistoryEntry(models.Model):
     def __unicode__((self)):
         return 'Work History: %s' % self.client_name
 
+    class Meta:
+        ordering = ['sort_order']
+
+
 
 class WorkAchievement(models.Model):
     entry = models.ForeignKey(
@@ -248,3 +266,6 @@ class WorkAchievement(models.Model):
         client = self.entry.client_name
         short_desc = self.description[0:50]
         return 'Achievement (%s): %s' % (client, short_desc)
+
+    class Meta:
+        ordering = ['sort_order']
