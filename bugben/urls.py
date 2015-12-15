@@ -21,6 +21,7 @@ from resume.views import ResumeDetailView
 
 urlpatterns = [
     url(r'^$', views.home),
+    url(r'^text$', views.text),
     url(r'^(?P<pk>[0-9]+)/$', ResumeDetailView.as_view()),
     url(r'^admin/', admin.site.urls),
 ]
