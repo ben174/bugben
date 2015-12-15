@@ -6,23 +6,25 @@
 
 <div class="resume">
     <div class="main-section">
-        <h1 class="text-center">Ben Friedland</h1>
-        <h5 class="text-center">resume@bugben.com</h5>
-        <h5 class="text-center">http://www.bugben.com</h5>
+        <h1 class="text-center">{{ object.name }}</h1>
+        <h5 class="text-center">{{ object.email }}</h5>
+        <h5 class="text-center">{{ object.url }}</h5>
     </div>
-    <div class="well">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <p>This resume isn't static. It is an application which I wrote.
-            <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a>
-            Feel free to use it and expand on it.</p>
+    {% if not format == 'basic' %}
+        <div class="well">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <p>This resume isn't static. It is an application which I wrote.
+                <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a>
+                Feel free to use it and expand on it.</p>
 
-        <p>This is the fully-styled version of my home page. If you'd like you can
-            view it in other formats: </p>
-        <div class="btn-group" align="center">
-            <a href="format/basic" class="btn">Traditional Resume</a>
-            <a href="format/plain?columns=80" class="btn">Plain Text</a>
+            <p>This is the fully-styled version of my home page. If you'd like you can
+                view it in other formats: </p>
+            <div class="btn-group">
+                <a href="format/basic" class="btn btn-primary">Traditional Resume</a>
+                <a href="format/plain?columns=80" class="btn btn-primary">Plain Text</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 
 
     <h3>Profile Summary:</h3>
@@ -58,27 +60,26 @@
 
 
         <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
-        <h6>{{ project.short_description }}</h6>
+        <p class="lead">{{ project.short_description }}</p>
 
-        {{ project.long_description|safe }}
+        <div class="project-body">
+            {{ project.long_description|safe }}
 
-        <dl class="dl-horizontal">
-            <dt>Project Page</dt>
-            <dd>
-                <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
-            </dd>
-        </dl>
+            <dl class="dl-horizontal">
+                <dt>Project Page</dt>
+                <dd>
+                    <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Source Code</dt>
+                <dd>
+                    <a href="{{ project.src_url }}">{{ project.src_url }}</a>
+                </dd>
+            </dl>
 
-
-        <dl class="dl-horizontal">
-            <dt>Source Code</dt>
-            <dd>
-                <a href="{{ project.src_url }}">{{ project.src_url }}</a>
-            </dd>
-        </dl>
-
+        </div>
         {% endfor %}
-        <p></p>
     </div>
 
 
@@ -87,7 +88,7 @@
     <div class="experience-entries">
 
         {% for job in object.workhistoryentry_set.all %}
-            {% if not format %}
+            {% if not format == 'basic' %}
                 <img class="pull-right work-logo" src="{% static job.logo_path %}">
             {% endif %}
             <h5>{{ job.client_name }}</h5>

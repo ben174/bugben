@@ -25,8 +25,7 @@ body {
   background-color: rgb(148, 148, 148);
 }
 
-li.profile-entry { 
-  font-size: 120%;
+li { 
   line-height: 26px;
 }
 
@@ -61,6 +60,7 @@ hr.style-two {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 hr {
   margin: 20px 0;
   border: 0;
@@ -74,4 +74,16 @@ hr {
   margin-top: 10px; 
   margin-bottom: 5px;
   margin-left: 5px;
+}
+
+dl {
+    margin-top: 20px; 
+}
+
+p.lead {
+    font-size: 16px;
+}
+
+div.project-body {
+    margin-left: 20px; 
 }
