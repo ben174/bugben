@@ -1,2 +1,2 @@
 Django==1.9
-
+gunicorn==19.4.1
