@@ -14,11 +14,7 @@
   border: 10px solid #666;
   padding: 5%;
   background-color: white;
-  -moz-border-radius: 5px;
   border-radius: 15px;
-  -moz-box-shadow: 3px 3px 10px #000;
-  -webkit-box-shadow: 3px 3px 10px #000;
-  box-shadow: 3px 3px 10px #000;
 }
 
 body { 
@@ -27,6 +23,11 @@ body {
 
 li { 
   line-height: 26px;
+}
+
+h1 {
+    font-weight: bold;
+    margin-top: 0px;
 }
 
 h3 { 
@@ -51,7 +52,6 @@ h6 {
 
 .experience-entries { 
   margin-left: 20px; 
-}
 
 
 hr.style-two {

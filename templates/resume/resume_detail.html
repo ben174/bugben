@@ -11,15 +11,15 @@
         <h5 class="text-center">{{ object.url }}</h5>
     </div>
     {% if not format == 'basic' %}
-        <div class="well">
-            <button type="button" class="close" data-dismiss="alert">×</button>
+        <div id="infobox" class="well">
+            <button type="button" class="close" data-dismiss="alert" onclick="$('#infobox').hide()">×</button>
             <p>This resume isn't static. It is an application which I wrote.
                 <a href="https://github.com/ben174/bugben"><b>It is open source.</b></a>
                 Feel free to use it and expand on it.</p>
 
             <p>This is the fully-styled version of my home page. If you'd like you can
                 view it in other formats: </p>
-            <div class="btn-group">
+            <div class="text-center">
                 <a href="format/basic" class="btn btn-primary">Traditional Resume</a>
                 <a href="format/plain?columns=80" class="btn btn-primary">Plain Text</a>
             </div>
