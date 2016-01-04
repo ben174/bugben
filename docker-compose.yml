@@ -29,13 +29,13 @@ postgres:
   volumes_from:
     - data
   ports:
-    - "5432:5432"
+    - "5432"
 
 redis:
   restart: always
   image: redis:latest
   ports:
-    - "6379:6379"
+    - "6379"
 
 data:
   restart: always
