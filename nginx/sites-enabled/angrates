@@ -1,6 +1,5 @@
 server {
     listen 81;
-    server_name bugben.com;
     charset utf-8;
 
     location /static {
