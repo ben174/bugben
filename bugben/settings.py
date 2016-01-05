@@ -85,6 +85,12 @@ DATABASES = {
 if 'DB_NAME' in os.environ.keys():
     # running in production
     print '********** PRODUCTION *************'
+    DEBUG = False
+    ALLOWED_HOSTS = [
+        '.bugben.com', # Allow domain and subdomains
+        'www.bugben.com', # Allow domain and subdomains
+        '.bugben.com.', # Also allow FQDN and subdomains
+    ]
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -95,8 +101,6 @@ if 'DB_NAME' in os.environ.keys():
             'PORT': os.environ['DB_PORT']
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
