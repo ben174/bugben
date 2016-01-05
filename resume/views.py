@@ -29,7 +29,9 @@ class ResumeDetailView(DetailView):
         })
 
 
-def riker(self):
+def riker(request):
     ret = rikeripsum.generate_paragraph()
-    return HttpResponse(ret, content_type='text/plain')
+    response = HttpResponse(ret, content_type='text/plain')
+    response['Access-Control-Allow-Origin'] = '*'
+    return response
 
