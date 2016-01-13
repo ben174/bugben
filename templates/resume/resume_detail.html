@@ -58,6 +58,9 @@
 
         {% for project in object.project_set.all %}
 
+        {% if not format == 'basic' %}
+            <img class="pull-right work-logo" src="{% static project.logo_path %}">
+        {% endif %}
 
         <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
         <p class="lead">{{ project.short_description }}</p>

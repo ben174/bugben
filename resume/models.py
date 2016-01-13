@@ -51,6 +51,10 @@ class Project(models.Model):
         'Resume',
     )
 
+    @property
+    def logo_path(self):
+        return 'img/logos/{}.png'.format(slugify(self.name))
+
     def __unicode__((self)):
         return "Project: %s" % self.name
 
