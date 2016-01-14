@@ -1,0 +1,27 @@
+section {
+    padding: 10px;
+}
+section:nth-of-type(1) {
+    background-color: #FFF4E9;
+}
+section:nth-of-type(2) {
+    background-color: #BBBECA;
+}
+section:nth-of-type(3) {
+    background-color: #C2D4C8;
+}
+section:nth-of-type(4) {
+    background-color: #C2D4C8;
+}
+section:nth-of-type(4) {
+    background-color: #CFAF90;
+}
+section>div {
+    padding: 20px;
+
+
+}
+
+.section-banner {
+    text-align: center;
+}
