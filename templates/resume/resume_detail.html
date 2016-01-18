@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% block posthead %}
     <link rel="stylesheet" href="{% static "css/resume.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,300italic' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -67,41 +68,64 @@
     </section>
     <section id="section-community">
         <h3>Community Contributions</h3>
+        {% for project in object.project_set.all %}
+        <div class="project">
+            {% if not format == 'basic' %}
+                <img class="pull-right work-logo img-responsive" src="{% static project.logo_path %}">
+            {% endif %}
 
-        <div>
-            {% for project in object.project_set.all %}
+            <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
+            <p class="project-lead">{{ project.short_description }}</p>
 
-                {% if not format == 'basic' %}
-                    <img class="pull-right work-logo" src="{% static project.logo_path %}">
-                {% endif %}
+            <div class="project-body">
+                {{ project.long_description|safe }}
 
-                <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
-                <p class="lead">{{ project.short_description }}</p>
+                <dl class="dl-horizontal">
+                    <dt>Project Page</dt>
+                    <dd>
+                        <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
+                    </dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Source Code</dt>
+                    <dd>
+                        <a href="{{ project.src_url }}">{{ project.src_url }}</a>
+                    </dd>
+                </dl>
 
-                <div class="project-body">
-                    {{ project.long_description|safe }}
-
-                    <dl class="dl-horizontal">
-                        <dt>Project Page</dt>
-                        <dd>
-                            <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a>
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                        <dt>Source Code</dt>
-                        <dd>
-                            <a href="{{ project.src_url }}">{{ project.src_url }}</a>
-                        </dd>
-                    </dl>
-
-                </div>
-            {% endfor %}
-
-
+            </div>
         </div>
+        {% endfor %}
+
+
     </section>
     <section id="section-experience">
         <h3>Experience</h3>
+
+        {% for job in object.workhistoryentry_set.all %}
+            <div class="project">
+                {% if not format == 'basic' %}
+                    <img class="pull-right work-logo img-responsive" src="{% static job.logo_path %}">
+                {% endif %}
+
+                <h5>{{ job.client_name }}</h5>
+
+                <div class="project-body">
+                    <p>
+                        {{ job.location }}<br>
+                        {{ job.timespan }}<br>
+                        {{ job.title }}<br>
+                    </p>
+                    <ul>
+                        {% for achievement in job.workachievement_set.all %}
+                            <li>{{ achievement.description }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+
+
     </section>
 
 
