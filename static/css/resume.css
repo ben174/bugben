@@ -84,6 +84,10 @@ h1 {
 }
 
 li {
-    line-height: 28px;
+    line-height: 22px;
     margin-bottom: 6px;
+}
+.project-body p {
+    line-height: 22px;
+    margin-bottom: 10px;
 }
