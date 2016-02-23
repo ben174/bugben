@@ -27,9 +27,9 @@ Experience
 ----------
 
 Each directory in here is a single position I've held. The date the directory
-was created is the start date of the position. A single file titled DEPARTURE
+was created is the start date of the position. A single file titled `DEPARTURE`
 is committed on my end date at that company. It can optionally contain some
-text with details on the DEPARTURE. e.g.: Fired for stealing stationary.
+text with details on the departure, e.g.: `Fired for stealing stationary`.
 
 
 Projects
