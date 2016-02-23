@@ -121,9 +121,9 @@ top of the resume.
 A simple markdown-formatted bulleted list of important links. Such as my Home
 Page, LinkedIn profile, and GitHub page.
 
-#### `EXPERTISE.json`
+#### `EXPERTISE.json` (Deprecated)
 
-A json structure:
+~A json structure~ (This has been deprecated in favor of git commit history):
 
 ```javascript
 [
