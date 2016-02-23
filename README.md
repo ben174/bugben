@@ -1,7 +1,7 @@
-Resume of Ben Friedland
-=======================
+Resume of Ben Friedland ![Resume Thumbnail][logo]
+=================================================
 
-#### http://www.bugben.com ![Resume Thumbnail][logo]
+#### http://www.bugben.com
 
 [logo]: https://raw.githubusercontent.com/ben174/bugben/master/logo.png "Resume of Ben Friedland"
 
