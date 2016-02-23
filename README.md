@@ -23,15 +23,56 @@ https://github.com/ben174/resume-renderer
 Resume Directory Structure
 ==========================
 
+The creation date of each subdirectory in the Git history represents the
+start date in my lifetime (i.e. started the job, created the project, started
+using the skill).
+
+This effectively allows me to output a `git log` of my career.
+
+#### An example of what a git log might contain:
+```
+*   08aeead Started working at 'Clutter'
+|\  
+| * 15e6b24 Began using Django
+| * 96e1c27 Began using Angular
+| *   45dc382 Merge branch 'master' into new-design
+| |\  
+| |/  
+|/|   
+* | 86d8344 Started working at 'Shape Security'
+* | 5ecbe26 Began using 'Selenium'
+* | 3792057 Began using 'ReactJS'
+| * b34098c Started Project 'Rick Roulette'
+|/
+
+```
+
+
+#### File structure
+
+Each subdirectory contains files detailing itself.
+
+##### `README.md`
+
 Each directory contains a `README.md` with a basic body of text detailing itself.
-It can optionally have a `LOGO.png` which will represent it when it is rendered.
-Individual entries are committed within as subdirectories.  The creation date
-of each subdirectory in the Git history represents the start date in my
-lifetime (i.e. started the job, created the project).
+This is handy because GitHub will display this markdown when navigating the repo.
+
+##### `LOGO.png`
+
+A logo representing the entry (company logo, project logo).
+
+##### `ORDER.txt`
 
 A directory can optionally contain an `ORDER.txt` which contains a listing of
 directory names, in the order they should be sorted. If this is left out,
 the renderer will sort the directories by the date they were committed.
+
+
+
+
+
+### O
+
 
 
 Experience
@@ -62,6 +103,15 @@ created.
 Since some of my projects are more notable than others and I'd like to be
 able to order them, the Projects directory has a order.txt file which
 contains the directory names in the order they should be rendered on my resume.
+
+Expertise
+---------
+
+Fields of expertise go here as directories. Within each directory would be a
+particular skill as an individual file, e.g.: `Python`, `HTML`. The creation
+date of this file determines when I first started using that skill. Optionally
+some text within the file can describe where I've used it and how comfortable
+I am with it.
 
 #### `SUMMARY.md`
 
