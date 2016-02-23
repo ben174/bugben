@@ -9,8 +9,20 @@ way back in the 90's, a database persisted Django project
 it by using a basic filesystem structure, with a git repository to
 maintain version history.
 
-Directory Structure
-===================
+
+The Renderer
+============
+
+I've created a separate Python project renders this resume to various formats.
+HTML, TXT, PDF, etc. The goal of this project is to create a standard format
+for a Resume repository and this Renderer could be used and expanded on to
+render your repo.
+
+https://github.com/ben174/resume-renderer
+
+
+Resume Directory Structure
+==========================
 
 Each directory contains a `README.md` with a basic body of text detailing itself.
 It can optionally have a `LOGO.png` which will represent it when it is rendered.
@@ -52,17 +64,17 @@ Since some of my projects are more notable than others and I'd like to be
 able to order them, the Projects directory has a order.txt file which
 contains the directory names in the order they should be rendered on my resume.
 
-#### SUMMARY.md
+#### `SUMMARY.md`
 
 A simple markdown-formatted bulleted list of my primary skills. Rendered at the
 top of the resume.
 
-#### LINKS.md
+#### `LINKS.md`
 
 A simple markdown-formatted bulleted list of important links. Such as my Home
 Page, LinkedIn profile, and GitHub page.
 
-#### EXPERTISE.json
+#### `EXPERTISE.json`
 
 A json structure:
 
@@ -97,12 +109,3 @@ A json structure:
 ]
 ```
 
-The Renderer
-============
-
-I've created a separate Python project renders this resume to various formats.
-HTML, TXT, PDF, etc. The goal of this project is to create a standard format
-for a Resume repository and this Renderer could be used and expanded on to
-render your repo.
-
-https://github.com/ben174/resume-renderer
