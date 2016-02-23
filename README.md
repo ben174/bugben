@@ -12,13 +12,13 @@ maintain version history.
 Directory Structure
 ===================
 
-Each directory contains a README.md with a basic body of text detailing itself.
-It can optionally have a LOGO.png which will represent it when it is rendered.
+Each directory contains a `README.md` with a basic body of text detailing itself.
+It can optionally have a `LOGO.png` which will represent it when it is rendered.
 Individual entries are committed within as subdirectories.  The creation date
 of each subdirectory in the Git history represents the start date in my
 lifetime (i.e. started the job, created the project).
 
-A directory can optionally contain an ORDER.txt which contains a listing of
+A directory can optionally contain an `ORDER.txt` which contains a listing of
 directory names, in the order they should be sorted. If this is left out,
 the renderer will sort the directories by the date they were committed.
 
