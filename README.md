@@ -61,32 +61,32 @@ EXPERTISE.json
 
 A json structure:
 
-  [
-    {
-      "category": "Web Application Development",
-      "entries": [
-        {
-          "title": "Python"
-          "years": 5,
-        },
-        {
-          "title": "Django"
-          "years": 4,
-        }
-      ]
-    },
-    {
-      "category": "Databases",
-      "entries": [
-        {
-          "title": "MySql"
-          "years": 5,
-        },
-        {
-          "title": "PostgreSQL"
-          "years": 4,
-        }
-      ]
-    }
-  ]
+    [
+      {
+        "category": "Web Application Development",
+        "entries": [
+          {
+            "title": "Python"
+            "years": 5,
+          },
+          {
+            "title": "Django"
+            "years": 4,
+          }
+        ]
+      },
+      {
+        "category": "Databases",
+        "entries": [
+          {
+            "title": "MySql"
+            "years": 5,
+          },
+          {
+            "title": "PostgreSQL"
+            "years": 4,
+          }
+        ]
+      }
+    ]
 
