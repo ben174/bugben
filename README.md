@@ -1,5 +1,7 @@
-bugben.com
-==========
+Resume of Ben Friedland
+=======================
+
+#### http://www.bugben.com
 
 ### My resume, as a git repository.
 
@@ -18,6 +20,10 @@ for a Resume repository and this Renderer could be used and expanded on to
 render your repo.
 
 https://github.com/ben174/resume-renderer
+
+The rendered output:
+
+#### http://www.bugben.com
 
 
 Resume Directory Structure
