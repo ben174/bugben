@@ -1,6 +1,6 @@
-<img style="float: right;" src="https://raw.githubusercontent.com/ben174/bugben/master/logo.png">
-Resume of Ben Friedland ![Resume Thumbnail][logo]
-=================================================
+Resume of Ben Friedland
+=======================
+<img align="right" src="https://raw.githubusercontent.com/ben174/bugben/master/logo.png">
 
 #### http://www.bugben.com
 
