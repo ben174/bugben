@@ -10,8 +10,7 @@ it by using a basic filesystem structure, with a git repository to
 maintain version history.
 
 
-The Renderer
-============
+### The Renderer
 
 I've created a separate Python project renders this resume to various formats.
 HTML, TXT, PDF, etc. The goal of this project is to create a standard format
