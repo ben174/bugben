@@ -27,15 +27,13 @@ The creation date of each subdirectory in the Git history represents the
 start date in my lifetime (i.e. started the job, created the project, started
 using the skill).
 
-This effectively allows me to output a `git log` of my career.
-
-#### An example of what a git log might contain:
+#### A pseudo `git-log`, a timeline of my carrer.
 ```
 *   08aeead Started working at 'Clutter'
 |\  
 | * 15e6b24 Began using Django
 | * 96e1c27 Began using Angular
-| *   45dc382 Merge branch 'master' into new-design
+| *   45dc382 Started Project 'ShowerTexts'
 | |\  
 | |/  
 |/|   
@@ -59,20 +57,14 @@ This is handy because GitHub will display this markdown when navigating the repo
 
 ##### `LOGO.png`
 
-A logo representing the entry (company logo, project logo).
+A logo representing the entry (company logo, project logo). The renderer will
+render this logo next to each entry.
 
 ##### `ORDER.txt`
 
 A directory can optionally contain an `ORDER.txt` which contains a listing of
 directory names, in the order they should be sorted. If this is left out,
 the renderer will sort the directories by the date they were committed.
-
-
-
-
-
-### O
-
 
 
 Experience
