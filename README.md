@@ -1,9 +1,8 @@
+<img style="float: right;" src="https://raw.githubusercontent.com/ben174/bugben/master/logo.png">
 Resume of Ben Friedland ![Resume Thumbnail][logo]
 =================================================
 
 #### http://www.bugben.com
-
-[logo]: https://raw.githubusercontent.com/ben174/bugben/master/logo.png "Resume of Ben Friedland"
 
 
 ### My resume, as a git repository.
