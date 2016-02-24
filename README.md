@@ -13,6 +13,7 @@ way back in the 90's, a database persisted Django project
 it by using a basic filesystem structure, with a git repository to
 maintain version history.
 
+Looking for the old Django Project? [Branch 3.0](https://github.com/ben174/bugben/tree/3.0)
 
 ### The Renderer
 
@@ -35,7 +36,7 @@ The creation date of each subdirectory in the Git history represents the
 start date in my lifetime (i.e. started the job, created the project, started
 using the skill).
 
-##### A pseudo `git-log`, a timeline of my carrer.
+##### A pseudo `git-log`, a timeline of my career:
 ```
 *   08aeead Started working at 'Clutter'
 |\  
