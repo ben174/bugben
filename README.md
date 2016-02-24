@@ -5,7 +5,7 @@ Resume of Ben Friedland
 #### http://www.bugben.com
 
 
-### My resume, as a git repository.
+### My career, as a git commit history.
 
 I've tried a couple iterations at my resume, an XML persisted solution
 way back in the 90's, a database persisted Django project
@@ -28,14 +28,14 @@ The rendered output:
 #### http://www.bugben.com
 
 
-Resume Directory Structure
-==========================
+Directory Structure
+--------------------------
 
 The creation date of each subdirectory in the Git history represents the
 start date in my lifetime (i.e. started the job, created the project, started
 using the skill).
 
-#### A pseudo `git-log`, a timeline of my carrer.
+##### A pseudo `git-log`, a timeline of my carrer.
 ```
 *   08aeead Started working at 'Clutter'
 |\  
@@ -56,23 +56,25 @@ using the skill).
 
 #### File structure
 
-Each subdirectory contains files detailing itself.
+Each subdirectory contains files detailing itself. 
+
+##### `NAME.txt`
+
+A file containing a friendly name of this particular entry, e.g.: `Riker Ipsum`.
+While the directory name should be indicative of what this entry represents,
+the renderer uses this string to make a more friendly name to output on the
+resume.
 
 ##### `README.md`
 
-Each directory contains a `README.md` with a basic body of text detailing itself.
-This is handy because GitHub will display this markdown when navigating the repo.
+Contains the basic body detailing the entry itself. For experience, this
+contains my job title, and some accomplishments. Keeping this in a `README.md`
+is handy because GitHub will display this markdown when navigating the repo.
 
 ##### `LOGO.png`
 
 A logo representing the entry (company logo, project logo). The renderer will
 render this logo next to each entry.
-
-##### `ORDER.txt`
-
-A directory can optionally contain an `ORDER.txt` which contains a listing of
-directory names, in the order they should be sorted. If this is left out,
-the renderer will sort the directories by the date they were committed.
 
 
 Experience
@@ -89,7 +91,7 @@ Projects
 
 Open source community contributions go here as directories. They can
 optionally contain a 'src' submodule which links to the repo which hosts
-the project. A README.md details the project and can link to its hosted site.
+the project.
 
     .gitmodules
 
@@ -97,26 +99,28 @@ the project. A README.md details the project and can link to its hosted site.
         path = src
         url = https://github.com/ben174/bugben.git
 
-Again, the creation date of the directory determines when the project was
-created.
+##### `ORDER.txt`
 
 Since some of my projects are more notable than others and I'd like to be
-able to order them, the Projects directory has a order.txt file which
+able to order them, the Projects directory has a `ORDER.txt` file which
 contains the directory names in the order they should be rendered on my resume.
 
 Expertise
 ---------
 
-Fields of expertise go here as directories. Within each directory would be a
-particular skill as an individual file, e.g.: `Python`, `HTML`. The creation
-date of this file determines when I first started using that skill. Optionally
+Fields of expertise go here as directories, e.g.: `Web Development`, `Operating
+Systems`. Within each directory would be several files for each particular
+skill, e.g.: `Python`, `HTML`. The creation date of this file determines when I 
+first started using that skill. The renderer may use this to add weight to
+individual skills based on the number of years I've used them. Optionally
 some text within the file can describe where I've used it and how comfortable
 I am with it.
 
 #### `SUMMARY.md`
 
-A simple markdown-formatted bulleted list of my primary skills. Rendered at the
-top of the resume.
+A simple markdown-formatted profile summary which is rendered at the top of my
+resume. In my case, I like a concise bulleted list outlining some of my skills
+and accomplishments.
 
 #### `LINKS.md`
 
@@ -125,7 +129,7 @@ Page, LinkedIn profile, and GitHub page.
 
 #### `EXPERTISE.json` (Deprecated)
 
-~A json structure~ (This has been deprecated in favor of git commit history):
+~~A json structure~~ (This has been deprecated in favor of git commit history):
 
 ```javascript
 [
@@ -162,9 +166,9 @@ Page, LinkedIn profile, and GitHub page.
 
 Tests will assert that:
 
-* I have a job
+* I am currently employed
 
 * I'm actively working on a project
 
-* I've made some community contributions in the past week
+* I've made some community contributions recently
 
