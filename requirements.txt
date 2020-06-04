@@ -1,4 +1,0 @@
-Django==1.9
-gunicorn==19.4.1
-psycopg2==2.6
-RikerIpsum==1.1

@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.db import models
 from django.utils.text import slugify
 
@@ -49,13 +47,14 @@ class Project(models.Model):
 
     resume = models.ForeignKey(
         'Resume',
+        on_delete=models.CASCADE,
     )
 
     @property
     def logo_path(self):
         return 'img/logos/{}.png'.format(slugify(self.name))
 
-    def __unicode__((self)):
+    def __str__(self):
         return "Project: %s" % self.name
 
     class Meta:
@@ -98,7 +97,7 @@ class Resume(models.Model):
         null=False,
     )
 
-    def __unicode__((self)):
+    def __str__(self):
         return "Resume: %s" % self.name
 
     class Meta:
@@ -131,9 +130,10 @@ class ImportantLink(models.Model):
 
     resume = models.ForeignKey(
         'Resume',
+        on_delete=models.CASCADE,
     )
 
-    def __unicode__((self)):
+    def __str__(self):
         return self.url
 
     class Meta:
@@ -156,9 +156,10 @@ class ProfileEntry(models.Model):
 
     resume = models.ForeignKey(
         'Resume',
+        on_delete=models.CASCADE,
     )
 
-    def __unicode__((self)):
+    def __str__(self):
         return 'Profile: %s' % self.entry
 
     class Meta:
@@ -186,9 +187,10 @@ class ExpertiseEntry(models.Model):
 
     resume = models.ForeignKey(
         'Resume',
+        on_delete=models.CASCADE,
     )
 
-    def __unicode__((self)):
+    def __str__(self):
         return 'Expertise: %s' % self.entry
 
     class Meta:
@@ -234,13 +236,14 @@ class WorkHistoryEntry(models.Model):
 
     resume = models.ForeignKey(
         'Resume',
+        on_delete=models.CASCADE,
     )
 
     @property
     def logo_path(self):
         return 'img/logos/{}.png'.format(slugify(self.client_name))
 
-    def __unicode__((self)):
+    def __str__(self):
         return 'Work History: %s' % self.client_name
 
     class Meta:
@@ -252,6 +255,7 @@ class WorkAchievement(models.Model):
     entry = models.ForeignKey(
         'WorkHistoryEntry',
         help_text='Work history entry to which this achievement belongs.',
+        on_delete=models.CASCADE,
     )
 
     description = models.TextField(
@@ -266,7 +270,7 @@ class WorkAchievement(models.Model):
         null=False,
     )
 
-    def __unicode__((self)):
+    def __str__(self):
         client = self.entry.client_name
         short_desc = self.description[0:50]
         return 'Achievement (%s): %s' % (client, short_desc)

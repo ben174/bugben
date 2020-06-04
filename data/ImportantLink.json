@@ -1,1 +1,0 @@
-[{"pk": 1, "model": "mainsite.importantlink", "fields": {"url": "http://www.linkedin.com/in/bfriedland", "sort_order": 1.0, "description": "Linked-In Profile"}}, {"pk": 2, "model": "mainsite.importantlink", "fields": {"url": "http://github.com/ben174", "sort_order": 2.0, "description": "GitHub Page"}}]
