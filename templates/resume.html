@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load resume_extras %}
 
 {% block posthead %}
 <style type="text/css">
@@ -19,6 +20,10 @@ h4 {
   margin-bottom: 0.5em;
 }
 
+h6 {
+  margin-bottom: 6px;
+}
+
 .alert {
   margin: 20px 0;
 }
@@ -35,6 +40,11 @@ h4 {
 
 .entry-logo {
   width: 100px;
+  margin-top: 10px;
+}
+
+h5 {
+  margin-top: 10px 0;
 }
 </style>
 {% endblock %}
@@ -94,7 +104,7 @@ h4 {
         </div>
       </div>
     <div class="details">
-      <p>{{ project.long_description }}</p>
+      <p>{{ project.long_description|text_to_html }}</p>
     </div>
     {% endfor %}
 
@@ -106,8 +116,10 @@ h4 {
         <div class="col-10">
           <h5>{{ work.client_name }}</h5>
           <h6>{{ work.title }}</h6>
-          <p>{{ work.location }}</p>
-          <p>{{ work.timespan }}</p>
+          <p>
+            {{ work.location }}<br />
+            {{ work.timespan }}
+          </p>
         </div>
         <div class="col-2">
           <img style="float: right" class="img-fluid entry-logo" src="{% static work.logo_path %}">
@@ -115,7 +127,7 @@ h4 {
       </div>
       <ul>
       {% for achievement in work.workachievement_set.all %}
-        <li>{{ achievement.description }}</li>
+        <li>{{ achievement.description|text_to_html }}</li>
       {% endfor %}
       </ul>
     {% endfor %}
