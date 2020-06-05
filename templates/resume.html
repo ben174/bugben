@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block posthead %}
 <style type="text/css">
 .header {
@@ -9,9 +11,14 @@
   margin-top: 20px;
   padding: 10px;
 }
-h1 {
+h1, h6 {
   font-weight: bold;
 }
+
+h4 {
+  margin-bottom: 0.5em;
+}
+
 .alert {
   margin: 20px 0;
 }
@@ -25,6 +32,10 @@ h1 {
 .details {
   font-size: 0.9em;
 }
+
+.entry-logo {
+  width: 100px;
+}
 </style>
 {% endblock %}
 {% block content %}
@@ -32,7 +43,6 @@ h1 {
 
 
 <main role="main" class="container">
-
   <div class="header">
     <h1>Resume of {{ resume.name }}</h1>
     <h4>{{ resume.email }}</h4>
@@ -45,7 +55,6 @@ h1 {
     This is the fully-styled version of my home page. If you'd like you can view it in other formats:
     </p>
   </div>
-
   <div class="resume-body">
     <h4>Profile Summary</h4>
     <ul>
@@ -65,9 +74,9 @@ h1 {
 
     <hr />
 
-    <h4>Expertise</h4>
+    <h4>Superpowers</h4>
     {% for entry in resume.expertiseentry_set.all %}
-      <h5>{{ entry.entry }}</h5>
+      <h6>{{ entry.entry }}</h6>
       <p>{{ entry.entry_details }}</p>
     {% endfor %}
 
@@ -75,8 +84,15 @@ h1 {
 
     <h4>Community Contributions</h4>
     {% for project in resume.project_set.all %}
-    <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
-    <h6 class="project-lead">{{ project.short_description }}</h6>
+      <div class="row justify-content-between">
+        <div class="col-4">
+          <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
+          <h6 class="project-lead">{{ project.short_description }}</h6>
+        </div>
+        <div class="col-4">
+          <img style="float: right" class="img-fluid entry-logo" src="{% static project.logo_path %}">
+        </div>
+      </div>
     <div class="details">
       <p>{{ project.long_description }}</p>
     </div>
@@ -86,10 +102,17 @@ h1 {
 
     <h4>Experience</h4>
     {% for work in resume.workhistoryentry_set.all %}
-      <h5>{{ work.client_name }}</h5>
-      <h6>{{ work.title }}</h6>
-      <p>{{ work.location }}</p>
-      <p>{{ work.timespan }}</p>
+      <div class="row justify-content-between">
+        <div class="col-4">
+          <h5>{{ work.client_name }}</h5>
+          <h6>{{ work.title }}</h6>
+          <p>{{ work.location }}</p>
+          <p>{{ work.timespan }}</p>
+        </div>
+        <div class="col-4">
+          <img style="float: right" class="img-fluid entry-logo" src="{% static work.logo_path %}">
+        </div>
+      </div>
       <ul>
       {% for achievement in work.workachievement_set.all %}
         <li>{{ achievement.description }}</li>
