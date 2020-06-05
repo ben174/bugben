@@ -44,7 +44,7 @@ h4 {
 
 <main role="main" class="container">
   <div class="header">
-    <h1>Resume of {{ resume.name }}</h1>
+    <h1>{{ resume.name }}</h1>
     <h4>{{ resume.email }}</h4>
     <h4>{{ resume.url }}</h4>
     <p class="lead">A full-stack software engineer in the Bay Area, California</p>
@@ -85,11 +85,11 @@ h4 {
     <h4>Community Contributions</h4>
     {% for project in resume.project_set.all %}
       <div class="row justify-content-between">
-        <div class="col-4">
+        <div class="col-10">
           <h5><a href="{{ project.deployment_url }}">{{ project.name }}</a></h5>
           <h6 class="project-lead">{{ project.short_description }}</h6>
         </div>
-        <div class="col-4">
+        <div class="col-2">
           <img style="float: right" class="img-fluid entry-logo" src="{% static project.logo_path %}">
         </div>
       </div>
@@ -103,13 +103,13 @@ h4 {
     <h4>Experience</h4>
     {% for work in resume.workhistoryentry_set.all %}
       <div class="row justify-content-between">
-        <div class="col-4">
+        <div class="col-10">
           <h5>{{ work.client_name }}</h5>
           <h6>{{ work.title }}</h6>
           <p>{{ work.location }}</p>
           <p>{{ work.timespan }}</p>
         </div>
-        <div class="col-4">
+        <div class="col-2">
           <img style="float: right" class="img-fluid entry-logo" src="{% static work.logo_path %}">
         </div>
       </div>
