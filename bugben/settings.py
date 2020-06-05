@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'shh...')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', True) == 'True'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', False) == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.bugben.com', 'bugben.com']
