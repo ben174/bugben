@@ -131,6 +131,10 @@ h6 {
       </div>
     <div class="details">
       <p>{{ project.long_description|text_to_html }}</p>
+      <ul>
+        <li><b>Source:</b> <a href="{{ project.src_url }}">{{ project.src_url }}</a></li>
+        <li><b>Project Page:</b> <a href="{{ project.deployment_url }}">{{ project.deployment_url }}</a></li>
+      </ul>
     </div>
     {% endfor %}
 
