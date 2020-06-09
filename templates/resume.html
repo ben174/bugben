@@ -13,7 +13,7 @@ a {
 }
 
 main.container {
-  background-color: #fafdf5;
+  background-color: #f9f7f5;
   border: solid 4px #000;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -22,13 +22,42 @@ main.container {
 }
 
 .header {
-  text-align: center;
   border: solid 1px #354633;
-  background-color: #f3fbe6;
-  border-radius: 30px;
+  background-color: #f3f2e5;
   margin-top: 20px;
   padding: 10px;
+  padding-left: 30px;
 }
+img#profile-image {
+  float: left;
+}
+
+@media (max-width: 768px) {
+  img#profile-image {
+    display: block;
+    float: none!important;
+    margin-left: auto;
+    margin-right: auto!important;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .header > h1, h2, h3, h4, h5, h6, p.lead {
+    font-size: 1.5rem;
+  }
+
+  .header > h4, p.lead {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+
+  }
+  .header > img {
+    font-size: 0.9rem;
+  }
+}
+
 
 h1, h6 {
   font-weight: bold;
@@ -68,7 +97,7 @@ h6 {
 }
 
 .alert-light {
-  background-color: #fafdf5;
+  background-color: #f9f7f5;
   border-color: #fdfdfe;
   border-radius: 11px;
 }
@@ -79,7 +108,9 @@ h6 {
 
 
 <main role="main" class="container">
+
   <div class="header">
+  <img src="{% static "img/benbart.png" %}" id="profile-image" class="rounded float-left img-fluid img-thumbnail" style="width: 15em; margin-right: 40px;" alt="Picture of Ben Friedland" />
     <h1>{{ resume.name }}</h1>
     <h4>{{ resume.email }}</h4>
     <h4>{{ resume.url }}</h4>
