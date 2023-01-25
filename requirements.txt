@@ -2,8 +2,8 @@ asgiref==3.2.7
 dj-database-url==0.5.0
 Django==3.0.7
 django-heroku==0.3.1
+django-on-heroku
 gunicorn==20.0.4
-psycopg2==2.7.5
 pytz==2020.1
 sqlparse==0.3.1
 whitenoise==5.1.0
